@@ -1,10 +1,10 @@
 name: GitHub Pages
 
-# on:
-#   push:
-#     branches:
-#       - main
-#       - master
+on:
+  push:
+    branches:
+      - main
+      - master
 
 concurrency:
   group: pages
