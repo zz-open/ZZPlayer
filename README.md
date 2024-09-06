@@ -18,9 +18,9 @@
 # fork
 可直接fork进行修改
 
-# 部署
-本项目部署采用github pages，其他平台也可。
+# 如何部署
+本项目采用github pages部署(白嫖，嘻嘻！)，其他平台均可。
 
-将build之后的代码推送到gh-pages分支，并且配置好github pages的settings即可。
+将构建后的dist文件内容上传到服务器即可。
 
 自定义域名[可选]
