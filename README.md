@@ -6,7 +6,7 @@
 原项目是html5+js实现，本人改进为vite+vue3+ts实现。
 
 运行效果:
-![运行效果](./运行效果.png)
+![](screenshot/run.png)
 
 # roadmap
 - [x] 整体修改为vite+vue3+ts, 可以正常运行
