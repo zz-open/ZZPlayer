@@ -1,6 +1,6 @@
 import { useScriptTag } from '@vueuse/core'
 import { useHead } from '@unhead/vue'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import type { EmitFn } from 'vue'
 import type { MetingJsState } from '../meting-js'
 
@@ -10,24 +10,27 @@ import type { MetingJsState } from '../meting-js'
  * @see https://github.com/metowolf/MetingJS
  */
 export function useMeting() {
-  const cdnPrefix = computed(() => '/heo-music')
+  const aPlayerMinJs = new URL('/heo-music/js/APlayer.min.js', import.meta.url).href
+  const meting2MinJs = new URL('/heo-music/js/Meting2.min.js', import.meta.url).href
+  const aPlayerMinCss = new URL('/heo-music/css/APlayer.min.css', import.meta.url).href
+  const mainCss = new URL('/heo-music/css/main.css', import.meta.url).href
 
   useHead({
     link: [
       {
         rel: 'stylesheet',
-        href: `${cdnPrefix.value}/css/APlayer.min.css`,
+        href: aPlayerMinCss,
       },
       {
         rel: 'stylesheet',
-        href: `${cdnPrefix.value}/css/main.css`,
+        href: mainCss,
       },
     ],
   })
 
   // load meting after aplayer
-  useScriptTag(`${cdnPrefix.value}/js/APlayer.min.js`, () => {
-    useScriptTag(`${cdnPrefix.value}/js/Meting2.min.js`)
+  useScriptTag(aPlayerMinJs, () => {
+    useScriptTag(meting2MinJs)
   })
 }
 
