@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/web-music-player/', // 参考 https://cn.vitejs.dev/guide/static-deploy.html
+  base: './', // 参考 https://cn.vitejs.dev/guide/static-deploy.html
   plugins: [vue({
     template: {
       compilerOptions: {
