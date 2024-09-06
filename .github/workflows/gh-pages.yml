@@ -55,9 +55,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          external_repository: zz-website/web-music-player
           publish_dir: ./dist
-          publish_branch: main
+          publish_branch: gh-pages
           commit_message: ${{ github.event.head_commit.message }}
           cname: music.zdog.top
           force_orphan: true
