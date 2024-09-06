@@ -53,7 +53,7 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           commit_message: ${{ github.event.head_commit.message }}
-          # cname: music.zdog.top
+          cname: a.zdog.top
           force_orphan: true
           enable_jekyll: false
           allow_empty_commit: true
