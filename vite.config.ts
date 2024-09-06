@@ -4,7 +4,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './', // 参考 https://cn.vitejs.dev/guide/static-deploy.html
+  // 参考 https://cn.vitejs.dev/guide/static-deploy.html
+  // 采用gh-pages分支部署时候，建议设置成./，不需要关心前缀
+  base: './',
   plugins: [vue({
     template: {
       compilerOptions: {
