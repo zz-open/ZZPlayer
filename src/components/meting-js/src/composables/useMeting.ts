@@ -3,6 +3,8 @@ import { useHead } from '@unhead/vue'
 import { onMounted, onUnmounted, ref } from 'vue'
 import type { EmitFn } from 'vue'
 import type { MetingJsState } from '../meting-js'
+import type { PlayListFlag } from '@/utils'
+import { PL_FLAG_DEFAULT, PL_FLAG_JAY, getDefaultPlayListCache, loadPlayList, setDefaultPlayListCache } from '@/utils'
 
 /**
  * use MetingJS and Aplayer
@@ -36,6 +38,7 @@ export function useMeting() {
 
 export function useAplayer(state: MetingJsState, emit: EmitFn) {
   const aplayerRef = ref()
+  const playListFlag = ref(PL_FLAG_DEFAULT)
 
   const aplayerOnLoadeddata = () => {
     // 监听 aplayer 的 loadeddata
@@ -79,15 +82,32 @@ export function useAplayer(state: MetingJsState, emit: EmitFn) {
     })
   }
 
+  const changePlayList = async (flag: PlayListFlag) => {
+    let songs = []
+    if (flag === PL_FLAG_JAY) {
+      songs = await loadPlayList(PL_FLAG_JAY)
+    }
+    else {
+      songs = getDefaultPlayListCache()
+    }
+
+    // 清除当前播放列表并添加新的歌曲
+    aplayerRef.value.list.clear()
+    // 设置歌单
+    aplayerRef.value.list.add(songs)
+  }
+
   return {
     aplayerRef,
+    playListFlag,
     aplayerOnLoadeddata,
+    changePlayList,
   }
 }
 
 export function useMetingLoadObserver(state: MetingJsState, emit: EmitFn) {
   const metingJsRef = ref()
-  const { aplayerRef, aplayerOnLoadeddata } = useAplayer(state, emit)
+  const { aplayerRef, aplayerOnLoadeddata, changePlayList } = useAplayer(state, emit)
 
   let hasExecuted = false
   let observer: MutationObserver | null
@@ -101,7 +121,9 @@ export function useMetingLoadObserver(state: MetingJsState, emit: EmitFn) {
     aplayerOnLoadeddata()
   }
 
-  const onMetingLoad = () => {}
+  const onMetingLoad = () => {
+    setDefaultPlayListCache(aplayerRef.value.list.audios)
+  }
 
   // 搞一个观察者，观察meting-js内部的aplayer是否加载了
   onMounted(() => {
@@ -138,5 +160,6 @@ export function useMetingLoadObserver(state: MetingJsState, emit: EmitFn) {
 
   return {
     metingJsRef,
+    changePlayList,
   }
 }

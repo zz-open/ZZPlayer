@@ -1,5 +1,32 @@
-import { onMounted, ref } from 'vue'
-import { extractValue } from '@/utils'
+import { onMounted, reactive, ref } from 'vue'
+import { PL_FLAG_DEFAULT, PL_FLAG_JAY, extractValue, getInitMetingJs } from '@/utils'
+import type { MetingJsProps } from '@/components/meting-js'
+
+export function useMetingJs() {
+  const mjRef = ref()
+  const mjProps = reactive<MetingJsProps>(getInitMetingJs())
+
+  const handleClickPlayListBtnJay = async () => {
+    const { changePlayListFn } = mjRef.value
+    await changePlayListFn(PL_FLAG_JAY)
+  }
+
+  const handleClickPlayListBtnDefault = async () => {
+    const { changePlayListFn } = mjRef.value
+    await changePlayListFn(PL_FLAG_DEFAULT)
+  }
+
+  const handleClickPlayListBtn2 = async () => {
+  }
+
+  return {
+    mjRef,
+    mjProps,
+    handleClickPlayListBtnJay,
+    handleClickPlayListBtnDefault,
+    handleClickPlayListBtn2,
+  }
+}
 
 export function useMusicPlanet() {
   const musicBgRef = ref()

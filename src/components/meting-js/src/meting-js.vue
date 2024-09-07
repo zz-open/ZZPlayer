@@ -10,12 +10,12 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<MetingJsProps>(), {
-  id: '12554572272',
+  id: '',
   server: 'netease',
   type: 'playlist',
   mutex: true,
   preload: 'auto',
-  order: 'random',
+  order: 'list',
   volume: 0.8,
 })
 
@@ -32,10 +32,19 @@ const state = reactive<MetingJsState>({
 const emit = defineEmits(['aplayerLoadeddata']) as EmitFn
 
 useMeting()
-const { metingJsRef } = useMetingLoadObserver(state, emit)
+const { metingJsRef, changePlayList } = useMetingLoadObserver(state, emit)
+
+// 重命名一下才能正常暴露出去
+const changePlayListFn = changePlayList
+
+defineExpose({
+  changePlayListFn,
+})
 </script>
 
 <template>
-  <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
-  <meting-js ref="metingJsRef" v-bind="state" />
+  <div>
+    <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
+    <meting-js ref="metingJsRef" v-bind="state" />
+  </div>
 </template>
