@@ -20,6 +20,9 @@ dependencies:
   vue:
     specifier: ^3.4.37
     version: 3.5.1(typescript@5.5.4)
+  vue-router:
+    specifier: '4'
+    version: 4.4.3(vue@3.5.1)
 
 devDependencies:
   '@types/node':
@@ -979,6 +982,10 @@ packages:
       de-indent: 1.0.2
       he: 1.2.0
     dev: true
+
+  /@vue/devtools-api@6.6.3:
+    resolution: {integrity: sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==}
+    dev: false
 
   /@vue/language-core@2.1.6(typescript@5.5.4):
     resolution: {integrity: sha512-MW569cSky9R/ooKMh6xa2g1D0AtRKbL56k83dzus/bx//RDJk24RHWkMzbAlXjMdDNyxAaagKPRquBIxkxlCkg==}
@@ -2881,6 +2888,15 @@ packages:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /vue-router@4.4.3(vue@3.5.1):
+    resolution: {integrity: sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      vue: 3.5.1(typescript@5.5.4)
     dev: false
 
   /vue-tsc@2.1.6(typescript@5.5.4):

@@ -5,4 +5,7 @@ export default antfu({
 }, { ignores: ['HeoMusic-2.3/*'] }, { rules: {
   'no-console': 'off',
   'unicorn/consistent-function-scoping': 'off',
+  'no-control-regex': 'off',
+  'ts/ban-ts-comment': 'off',
+  'no-alert': 'off',
 } })

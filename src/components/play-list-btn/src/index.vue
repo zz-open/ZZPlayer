@@ -25,21 +25,17 @@ defineEmits(['click'])
 
 <style lang="scss" scoped>
 .play-list-btn {
-    font-size: 14px;
-    position: fixed;
+    font-size: 18px;
     display: flex;
-    width: 50px;
-    height: 50px;
-    bottom: 100px;
+    width: 170px;
+    height: 30px;
     padding: 5px;
     background: rgba(255,255,255,0.2);
     backdrop-filter: saturate(180%) blur(20px);
-    border-radius: 50%;
     color: #fff;
     text-align: center;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 2;
 }
 </style>
