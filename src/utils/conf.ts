@@ -57,11 +57,11 @@ export function getServerPlayList(): ServerPlayListItem[] {
       server: 'netease',
       type: 'playlist',
     },
-    {
-      name: '歌单3(qq音乐)',
-      id: 'HKrEn5a15RDE', // https://c6.y.qq.com/base/fcgi-bin/u?__=HKrEn5a15RDE
-      server: 'tencent',
-      type: 'playlist',
-    },
+    // {
+    //   name: '歌单3(qq音乐)',
+    //   id: 'HKrEn5a15RDE', // https://c6.y.qq.com/base/fcgi-bin/u?__=HKrEn5a15RDE
+    //   server: 'tencent',
+    //   type: 'playlist',
+    // },
   ]
 }
