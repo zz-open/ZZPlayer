@@ -9,5 +9,8 @@ export function createAplayer() {
     container: getMusicPageContainer(),
     lrcType: DEFAULT_LRC_TYPE,
     audio: [],
+    mutex: true,
+    preload: 'auto',
+    order: 'list',
   }) as any
 }

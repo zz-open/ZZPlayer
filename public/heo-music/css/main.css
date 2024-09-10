@@ -231,7 +231,7 @@ body #nav-music {
   align-items: center;
 }
 #heoMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
-  margin: 0 160px 0 150px;
+  margin: 0 190px 0 150px;
 }
 #heoMusic-page .aplayer-info .aplayer-controller .aplayer-played {
   background: var(--heo-white) !important;
@@ -288,6 +288,18 @@ body #nav-music {
 
 #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
   display: none;
+}
+
+#heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-loop {
+  display: inline;
+}
+
+#heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-lrc {
+  display: inline;
+}
+
+#heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-order {
+  display: inline;
 }
 
 #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon path {

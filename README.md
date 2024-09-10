@@ -26,10 +26,11 @@ pnpm build
 ```
 然后将构建后的dist目录下的所有文件，上传到服务器即可。
 
-# 支持自定义本地歌单
+# 本地歌单
+参考以下实现
 - /public/playlist/default.json
 - /public/playlist/jay.json
 
-# 支持网络歌单
-要求歌单必须是公开的，支持 'netease' | 'tencent' | 'kugou' | 'xiami' | 'baidu'
+# 网络歌单
+歌单必须是公开的，目前只测试了 'netease'
 - netease, playlist, 12554572272, 网易云歌单

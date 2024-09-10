@@ -10,9 +10,9 @@ export default defineConfig({
   plugins: [vue({
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => {
-          return tag === 'meting-js'
-        },
+        // isCustomElement: (tag) => {
+        //   return tag === 'meting-js'
+        // },
       },
     },
   })],

@@ -50,7 +50,6 @@ export async function useAplayerMain(props: AplayerJsProps, emit: EmitFn) {
 /**
  * use MetingJS and Aplayer
  * @see https://github.com/MoePlayer/APlayer
- * @see https://github.com/metowolf/MetingJS
  */
 export async function useLoadScriptAndStyle(aplayerRef: Ref<any>) {
   const aPlayerMinJs = new URL('/heo-music/js/APlayer.min.js', import.meta.url).href
