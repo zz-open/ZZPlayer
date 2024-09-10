@@ -48,14 +48,6 @@ body {
   justify-content: space-between;
 }
 
-#heoMusic-page.localMusic {
-  display: flex;
-  flex-direction: row-reverse;
-  background: rgba(0, 0, 0, 0);
-  border: none;
-  box-shadow: none;
-  justify-content: space-between;
-}
 #page {
   border: 0;
   box-shadow: none !important;
@@ -101,7 +93,8 @@ body {
 }
 
 #heoMusic-page {
-  max-width: 1400px;
+  max-width: 1600px;
+  width: 100%;
   margin: auto;
   margin-top: 60px;
   padding: 0.2rem 1.5rem;
@@ -121,6 +114,7 @@ body {
   background: rgba(0, 0, 0, 0);
   border: none;
   box-shadow: none;
+  justify-content: space-between;
 }
 
 body #web_bg {
@@ -229,7 +223,7 @@ body #nav-music {
 /* 控制器 */
 #heoMusic-page .aplayer-info .aplayer-controller {
   position: fixed;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   left: 0;
   right: 0;
@@ -440,229 +434,4 @@ body .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.apla
 .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume {
   width: 100%;
   background: var(--heo-white)!important;
-}
-
-/* **** 移动端样式 ***** */
-@media screen and (max-width: 768px) {
-  body #rightside {
-    display: none;
-  }
-  body #content-inner,
-  body #page {
-    z-index: auto;
-  }
-  /* 歌曲列表 */
-  #heoMusic-page .aplayer-list {
-    position: fixed;
-    z-index: 1002;
-    width: 100%;
-    bottom: 0px;
-    left: 0;
-    background: var(--heo-white);
-    border-radius: 16px 16px 0px 0px;
-    padding: 15px 0px;
-    max-width: 100%;
-    height: calc(var(--vh) - 200px);
-  }
-  #heoMusic-page .aplayer-list.aplayer-list-hide {
-    bottom: -100% !important;
-  }
-  #heoMusic-page ol {
-    max-height: 100%!important;
-    padding-right: 3px;
-    padding-left: 8px;
-  }
-  #heoMusic-page ol > li {
-    display: flex;
-  }
-  #heoMusic-page ol > li span {
-    color: var(--font-color);
-  }
-  #heoMusic-page ol > li span.aplayer-list-title {
-    width: 30%;
-  }
-  #heoMusic-page ol > li.aplayer-list-light {
-    background: #33a673;
-    padding: 5px 20px;
-    border-radius: 10px;
-    height: 52px;
-    justify-content: center;
-  }
-  #heoMusic-page ol > li.aplayer-list-light .aplayer-list-title {
-    margin-top: 4px;
-  }
-  #heoMusic-page ol > li.aplayer-list-light span {
-    color: #fff;
-  }
-  #heoMusic-page ol > li span.aplayer-list-title {
-    max-width: 55%;
-    width: auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-  }
-  #heoMusic-page ol > li span.aplayer-list-author {
-    right: 10px;
-    width: auto;
-    max-width: 35%;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    margin-left: auto;
-  }
-  #heoMusic-page ol > li.aplayer-list-light span.aplayer-list-author {
-    margin-left: 0;
-  }
-
-  #heoMusic-page ol > li.aplayer-list-light span.aplayer-list-author {
-    right: 15px;
-  }
-  /* 歌词信息 */
-  #heoMusic-page .aplayer-body {
-    width: 100%;
-    overflow: hidden;
-    position: fixed;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: calc(var(--vh) - 200px);
-  }
-  #heoMusic-page .aplayer-info .aplayer-lrc {
-    margin-top: 0;
-    height: auto;
-    min-height: 100%;
-    mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000);
-  }
-  /* 控制按键和进度条 */
-  #heoMusic-page .aplayer-info .aplayer-controller {
-    width: 100%;
-    bottom: 120px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
-    margin: 0 32px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time {
-    bottom: -40px;
-    align-items: center;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-time-inner {
-    position: absolute;
-    width: 100%;
-    margin-right: 4px;
-    margin-top: -60px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-dtime {
-    position: absolute;
-    right: 30px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-ptime {
-    position: absolute;
-    left: 44px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-back {
-    margin: auto;
-    right: 110px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
-    margin: auto;
-    right: 0;
-    left: 0;
-    width: 56px;
-    height: 56px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward {
-    margin: auto;
-    left: 110px;
-    right: 0;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-order {
-    position: absolute;
-    left: 22px;
-    width: 24px;
-    height: 24px;
-    opacity: 0.4;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-loop {
-    position: absolute;
-    right: 25px;
-    width: 24px;
-    height: 24px;
-    opacity: 0.4;
-  }
-  #heoMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
-    display: inline;
-    position: absolute;
-    right: 30px;
-    top: -100px;
-    width: 24px;
-    height: 24px;
-    opacity: 0.4;
-  }
-  #heoMusic-page .aplayer-volume-bar-wrap {
-    bottom: 0px;
-    right: 7px;
-  }
-  #heoMusic-page .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap {
-    left: -66px;
-    display: none;
-  }
-  #heoMusic-page.localMusic .aplayer-info .aplayer-controller .aplayer-volume-wrap {
-    left: -66px;
-    display: none;
-  }
-  #heoMusic-page .aplayer-info .aplayer-lrc {
-    padding-top: 100px;
-  }
-
-  #heoMusic-page .aplayer-info .aplayer-lrc p {
-    font-size: 32px;
-    margin-bottom: 38px;
-    line-height: 42px;
-    height: 42px;
-  }
-  #heoMusic-page .aplayer-info .aplayer-music {
-    display: flex;
-    position: fixed;
-    top: calc(var(--vh) - 178px);
-    left: 0;
-    margin: 0;
-    margin-left: 32px;
-    height: 21px;
-    max-width: calc(100vw - 110px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    opacity: 0.6;
-    align-items: center;
-    line-height: 1;
-  }
-
-  #heoMusic-page .aplayer-info .aplayer-music .aplayer-title {
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0;
-    line-height: 1;
-  }
-
-  #heoMusic-page .aplayer-info .aplayer-music .aplayer-author {
-    margin-left: 4px;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1;
-  }
-
-  #heoMusic-page .aplayer-info .aplayer-music .aplayer-author,
-  #heoMusic-page .aplayer-info .aplayer-music .aplayer-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: calc(100vw - 176px);
-  }
-
-  .aplayer .aplayer-lrc {
-    overflow: inherit;
-  }
 }
