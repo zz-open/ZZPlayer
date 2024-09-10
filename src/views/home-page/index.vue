@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import backgroundImg from '@/assets/img/background.webp?url'
 import PlayListBtn from '@/components/play-list-btn'
 import { getLocalPlayList, getServerPlayList } from '@/utils'
 import { useRouterExtend } from '@/composables'
@@ -8,7 +9,7 @@ const { goLocalPage, goServerPage } = useRouterExtend()
 
 <template>
   <div class="bg-all">
-    <img id="bg" onerror="this.classList.add('error');" src="/background.webp">
+    <img id="bg" onerror="this.classList.add('error');" :src="backgroundImg">
     <div class="cover" />
   </div>
   <div class="play-list-wrapper">

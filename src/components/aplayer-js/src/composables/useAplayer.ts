@@ -1,5 +1,4 @@
 import { useScriptTag } from '@vueuse/core'
-import { useHead } from '@unhead/vue'
 import { onUnmounted, reactive, ref, watch, watchEffect } from 'vue'
 import type { EmitFn, Ref } from 'vue'
 import type { AplayerJsProps, AplayerJsState } from '../types'
@@ -52,16 +51,7 @@ export async function useAplayerMain(props: AplayerJsProps, emit: EmitFn) {
  * @see https://github.com/MoePlayer/APlayer
  */
 export async function useLoadScriptAndStyle(aplayerRef: Ref<any>) {
-  const aPlayerMinJs = new URL('/heo-music/js/APlayer.min.js', import.meta.url).href
-  const aPlayerMinCss = new URL('/heo-music/css/APlayer.min.css', import.meta.url).href
-  const mainCss = new URL('/heo-music/css/main.css', import.meta.url).href
-
-  useHead({
-    link: [
-      { rel: 'stylesheet', href: aPlayerMinCss },
-      { rel: 'stylesheet', href: mainCss },
-    ],
-  })
+  const aPlayerMinJs = new URL('/APlayer.min.js', import.meta.url).href
 
   const { load, unload } = useScriptTag(aPlayerMinJs, () => {
     aplayerRef.value = createAplayer()
