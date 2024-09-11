@@ -1,4 +1,4 @@
-# vue-zzplayer
+# ZZPlayer
 一款沉浸式网页音乐播放器
 
 本项目采用vite+vue3+ts等技术实现。
