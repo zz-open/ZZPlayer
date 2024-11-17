@@ -3,8 +3,15 @@ import type { MusicApiParma } from '@/types'
 export async function fetchSongs(params: MusicApiParma) {
   try {
     const { id, type, server } = params
+
     // const baseUrl = `https://meting.zhheo.com?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
-    const baseUrl = `http://meting-api.zdog.top:9876/api?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
+    // const baseUrl = `http://meting-api.zdog.top:9876/api?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
+
+    // 本地服务器
+    // const baseUrl = `http://testing.meting-api.zz/meting/api?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
+
+    // 线上服务器
+    const baseUrl = `https://meting-api.zdog.top/meting/api?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
     const res = await fetch(baseUrl)
     return await res.json()
   }
