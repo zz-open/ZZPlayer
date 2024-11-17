@@ -31,37 +31,46 @@ export function getLocalPlayList(): LocalPlayListItem[] {
       url: '/playlist/default.json',
     },
     {
-      name: '周杰伦',
+      name: '《我很忙》- 周杰伦',
       url: '/playlist/jay.json',
     },
   ]
 }
 
 export function getServerPlayList(): ServerPlayListItem[] {
+  return []
+}
+
+export function getNeteaseServerPlayList(): ServerPlayListItem[] {
   return [
     {
-      name: '默认歌单(网易云)',
+      name: '默认歌单',
       id: '12554572272',
       server: 'netease',
       type: 'playlist',
     },
     {
-      name: '歌单1(网易云)',
+      name: '歌单1',
       id: '8835928221',
       server: 'netease',
       type: 'playlist',
     },
     {
-      name: '歌单2(网易云)',
+      name: '歌单2',
       id: '9379831714',
       server: 'netease',
       type: 'playlist',
     },
-    // {
-    //   name: '歌单3(qq音乐)',
-    //   id: 'HKrEn5a15RDE', // https://c6.y.qq.com/base/fcgi-bin/u?__=HKrEn5a15RDE
-    //   server: 'tencent',
-    //   type: 'playlist',
-    // },
+  ]
+}
+
+export function getTecentServerPlayList(): ServerPlayListItem[] {
+  return [
+    {
+      name: '默认歌单',
+      id: '9321051544', // https://c6.y.qq.com/base/fcgi-bin/u?__=HKrEn5a15RDE,需要访问后跳转才能看到歌单id
+      server: 'tencent',
+      type: 'playlist',
+    },
   ]
 }

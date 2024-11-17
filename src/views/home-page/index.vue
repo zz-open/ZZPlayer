@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import backgroundImg from '@/assets/img/background.webp?url'
 import PlayListBtn from '@/components/play-list-btn'
-import { getLocalPlayList, getServerPlayList } from '@/utils'
+import { getLocalPlayList, getNeteaseServerPlayList, getTecentServerPlayList } from '@/utils'
 import { useRouterExtend } from '@/composables'
 
 const { goLocalPage, goServerPage } = useRouterExtend()
@@ -21,13 +21,22 @@ const { goLocalPage, goServerPage } = useRouterExtend()
         <PlayListBtn v-for="(item, index) in getLocalPlayList()" :key="index" :text="item.name" @click="goLocalPage(item)" />
       </div>
     </div>
-    <div style="height: 80px" />
+    <div style="height: 40px" />
     <div>
       <h1 style="text-align: center;">
-        网络歌单
+        网易云歌单
       </h1>
       <div class="row">
-        <PlayListBtn v-for="(item, index) in getServerPlayList()" :key="index" :text="item.name" @click="goServerPage(item)" />
+        <PlayListBtn v-for="(item, index) in getNeteaseServerPlayList()" :key="index" :text="item.name" @click="goServerPage(item)" />
+      </div>
+    </div>
+    <div style="height: 40px" />
+    <div>
+      <h1 style="text-align: center;">
+        企鹅音乐歌单
+      </h1>
+      <div class="row">
+        <PlayListBtn v-for="(item, index) in getTecentServerPlayList()" :key="index" :text="item.name" @click="goServerPage(item)" />
       </div>
     </div>
   </div>
