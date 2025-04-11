@@ -22,6 +22,7 @@ export function useRouterExtend() {
     router.push({
       name: 'server',
       query: {
+        host: item.host,
         name: encodeURIComponent(item.name),
         id: encodeURIComponent(item.id),
         type: encodeURIComponent(item.type),

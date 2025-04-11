@@ -28,10 +28,12 @@ export interface LocalPlayListItem {
 }
 
 export type ServerPlayListItem = Pick<MetingJs, 'id' | 'type' | 'server'> & {
+  host: string
   name: string
 }
 
 export interface MusicApiParma {
+  host?: string
   id: string
   server: string
   type: string

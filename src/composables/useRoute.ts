@@ -31,6 +31,7 @@ export function useLoadServerSongs() {
     let queryId = route.query.id ? decodeURIComponent(route.query.id as string) : ''
     let queryServer = route.query.server ? decodeURIComponent(route.query.server as string) : ''
     let queryType = route.query.type ? decodeURIComponent(route.query.type as string) : ''
+    let queryHost = route.query.host ? decodeURIComponent(route.query.host as string) : ''
     if (!queryId) {
       const conf = getDefaultServerModeConf()
       queryId = conf.id
@@ -39,7 +40,7 @@ export function useLoadServerSongs() {
     }
 
     if (queryId && queryServer && queryType) {
-      return await fetchSongs({ id: queryId, server: queryServer, type: queryType })
+      return await fetchSongs({ id: queryId, server: queryServer, type: queryType, host: queryHost })
     }
 
     return []
